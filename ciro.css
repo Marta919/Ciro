@@ -1,17 +1,14 @@
-.container {
-  margin: 0 auto;
-  display: block;
-  border: 1px solid grey;
-  width: fit-content;
-}
-
 body {
   background-color: black;
+  margin: 0 auto;
+  display: block;
 }
 img {
   border-radius: 50%;
-
   float: right;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 h1 {
   font-family: "Dancing Script", cursive;
