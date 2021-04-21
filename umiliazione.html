@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
 </head>
 <body>
 <h1>Un po' di ricordi...</h1>
-<img src="muro.jpeg" width="300px"/> 
-<img src="insieme.jpeg" />
-<img src="gr.jpeg" />
-<img src="coo.jpeg"/>
-<img src="uu.jpeg" />
-<img src="whisky.jpeg"/>
-<img src="4.jpeg"/>
+
+<img id="slider" src="foto(1).jpeg" height="300" width="400" />
+
+<br />
+<button class="fotos" onClick="avanti();">Avanti</button>
+<button class="fotos" onClick="indietro();">Indietro</button>
+<br />
+
     <p> Non potevamo solo essere carine, questo è il nostro scherzo a distanza! Ci siamo impegnate per fare l'unica cosa
         possibile in questo momento in cui la socialità è solo online: sbirciare nei telefoni e negli hard-disk. Enjoy
         amore, ti vogliamo bene e ci dispiace non essere lì!<br /> 🧡💛💚💙💜🖤</p>
@@ -28,9 +30,40 @@ p{
     text-align: center;
     
 }
+
+
 .umiliazioniGratis {
     margin: 0 auto;
     display: block;
 }
+#slider{
+    margin: 0 auto;
+    display: block;
+
+}
+.fotos {
+    margin: 0 0 0 625px;
+    width: 100px;
+}
 </style>
+<script>
+    let imagine = 1;
+function avanti () {
+    if (imagine > 13) {
+        imagine = 1;
+    }
+
+    imagine ++;
+document.getElementById("slider").src = "foto(" + imagine + ").jpeg";
+}
+function indietro () {
+    
+    if (imagine < 1){
+        imagine= 9;
+    }
+    imagine--;
+    document.getElementById("slider").src = "foto(" - imagine - ").jpeg";
+}
+
+</script>
 </html>
