@@ -14,7 +14,7 @@
 
 <br />
 <button class="fotos" onClick="avanti();">Avanti</button>
-<button class="fotos" onClick="indietro();">Indietro</button>
+<button class="ciao" onClick="indietro();">Indietro</button>
 <br />
 
     <p> Non potevamo solo essere carine, questo è il nostro scherzo a distanza! Ci siamo impegnate per fare l'unica cosa
@@ -57,10 +57,7 @@ function avanti () {
 document.getElementById("slider").src = "foto(" + imagine + ").jpeg";
 }
 function indietro () {
-    
-    if (imagine < 1){
-        imagine= 9;
-    }
+   
     imagine--;
     document.getElementById("slider").src = "foto(" - imagine - ").jpeg";
 }
