@@ -10,25 +10,25 @@
 <body>
 <h1>Un po' di ricordi...</h1>
 
-<img id="slider" src="foto(1).jpeg" height="300" width="400" />
-
-<br />
-<button class="fotos" onClick="avanti();">Avanti</button>
-<button class="ciao" onClick="indietro();">Indietro</button>
-<br />
+    <img name="slide" class="slide" src="foto(1).jpeg" height="300" width="400" /> <span>
 
     <p> Non potevamo solo essere carine, questo è il nostro scherzo a distanza! Ci siamo impegnate per fare l'unica cosa
         possibile in questo momento in cui la socialità è solo online: sbirciare nei telefoni e negli hard-disk. Enjoy
-        amore, ti vogliamo bene e ci dispiace non essere lì!<br /> 🧡💛💚💙💜🖤</p>
-<video class="umiliazioniGratis" src="VID-20210418-WA0096.mp4" width=320  height=240 controls poster="immaginedianteprima.jpg"></video>
+        amore, ti vogliamo bene e ci dispiace non essere lì!<br /> 🧡💛💚💙💜🖤</p> </span>
+<video class="umiliazioniGratis" src="VID-20210418-WA0096.mp4" width=320  height=240 controls ></video>
 
 
 </body>
 <style>
+    h1{
+        text-align: center;
+        color:green;
+    }
 p{
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    
+    color: green;
+   
 }
 
 
@@ -41,26 +41,50 @@ p{
     display: block;
 
 }
-.fotos {
-    margin: 0 0 0 625px;
-    width: 100px;
+.slide {
+    margin: 0 0 0 460px;
+  
 }
 </style>
 <script>
-    let imagine = 1;
-function avanti () {
-    if (imagine > 13) {
-        imagine = 1;
+
+    var i = 0; 			
+    var images = [];	
+    var time = 1500;	
+
+    // Image List
+    images[0] = "foto(1).jpeg";
+    images[1] = "foto(2).jpeg";
+    images[2] = "foto(3).jpeg";
+    images[3] = "foto(4).jpeg";
+    images[4] = "foto(5).jpeg";
+    images[5] = "foto(6).jpeg";
+        images[6] = "foto(7).jpeg";
+        images[7] = "foto(8).jpeg";
+        images[8] = "foto(9).jpeg";
+        images[9] = "foto(10).jpeg";
+        images[10] = "foto(11).jpeg";
+            images[11] = "foto(12).jpeg";
+            images[12] = "foto(13).jpeg";
+           
+    function changeImg() {
+        document.slide.src = images[i];
+
+
+        if (i < images.length - 1) {
+          
+            i++;
+        } else {
+            
+            i = 0;
+        }
+
+     
+        setTimeout("changeImg()", time);
     }
 
-    imagine ++;
-document.getElementById("slider").src = "foto(" + imagine + ").jpeg";
-}
-function indietro () {
-   
-    imagine--;
-    document.getElementById("slider").src = "foto(" - imagine - ").jpeg";
-}
+  
+    window.onload = changeImg();
 
 </script>
 </html>
